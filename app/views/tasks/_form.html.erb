@@ -1,0 +1,45 @@
+<%= form_with(model: task, local: true) do |form| %>
+  <% if task.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
+
+      <ul>
+        <% task.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :website_name, 'Website' %>
+    <%= form.text_field :website_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :no_fon, 'No. Telefon' %>
+    <%= form.text_field :no_fon, placeholder: "cth: 0162958212" %>
+    <small>Tanpa kod kawasan (+6)</small>
+  </div>
+
+  <div class="field">
+    <%= form.label :kaedah %>
+    <%= form.select :kaedah, ['Call', 'Email'] %>
+  </div>
+
+  <div class="field">
+    <%= form.label :no_tix, 'No. Tiket' %>
+    <%= form.text_field :no_tix %>
+    <small>Sekiranya memilih kaedah email</small>
+
+  </div>
+
+  <div class="field">
+    <%= form.label :reason, 'Maklum Balas' %>
+    <%= form.text_area :reason, size:"50x20" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Hantar' %>
+  </div>
+<% end %>
