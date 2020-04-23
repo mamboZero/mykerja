@@ -2,6 +2,12 @@
 
 body{
 	font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  background: #FF8008;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #FFC837, #FF8008);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #FFC837, #FF8008); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
 }
 
 h1,
@@ -14,20 +20,26 @@ h5{
 
 
 .custom-bg{
-  background: #EC6F66;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #F3A183, #EC6F66);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #F3A183, #EC6F66); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  background: #F09819;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #EDDE5D, #F09819);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #EDDE5D, #F09819); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
 
+// footer
+.copy{
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 0.5;
+  font-weight: 300;
+}
 
 
 
 /*table*/
-body {
-  background: #f7f7f7;
-}
+// body {
+//   background: #f7f7f7;
+// }
 
 .table {
   border-spacing: 0 0.85rem !important;
