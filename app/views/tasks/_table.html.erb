@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="row py-5">
+    <div class="col-12">
+      <table id="example" class="table table-hover responsive nowrap"  style="width:100%">
+        <thead>
+          <tr>
+            <th>Client Website</th>
+            <th>Phone Number</th>
+            <th>Profession</th>
+            <th>created at</th>
+            <th>Ticket No.</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @tasks.each do |task| %>
+          <tr>
+            <td>
+              <a href="#">
+                <div class="d-flex align-items-center">
+                  <div class="avatar avatar-blue mr-3"> </div>
+
+                  <div class="">
+                    <p class="font-weight-bold mb-0"><%= task.website_name %></p>
+                    <p class="text-muted mb-0"><%= task.email_client %></p>
+                  </div>
+                </div>
+              </a>
+            </td>
+            <td><a href="https://wa.me/<%= task.mys_num %>" ><img src="https://www.nicepng.com/png/full/33-334867_10-apr-2015-whatsapp-button-png.png" width="30" /><%= task.mys_num %></a></td>
+            <td><%= task.user.email %></td>
+            <td><%= distance_of_time_in_words(task.created_at, Time.now) %> ago</td>
+            <td>
+
+              <%= task.no_tix %>
+              
+            </td>
+            <td>
+              <% unless user_signed_in? && current_user %>
+              <div class="badge badge-success badge-success-alt"><%= link_to 'Show', task %></div>
+              <% else %>
+              <div class="badge badge-warning badge-warning-alt"><%= link_to 'Edit', edit_task_path(task) %></div>
+              <div class="badge badge-danger badge-danger-alt"><%= link_to 'Delete', task, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+              <% end %>
+            </td>
+          </tr>
+        </tbody>
+            <% end %>
+
+      </table>
+      <%= will_paginate @tasks %>
+
+    </div>
+  </div>
+</div>

@@ -12,10 +12,14 @@
   </head>
 
   <body>
-  
-  <%= render 'shared/nav' %>
-
+    <nav>
+      <%= link_to 'home', "/" %>
+      <% unless current_user %>
+            <%= link_to 'login', user_session_path %>
+        <% else %>
+            <%= link_to 'logout', destroy_user_session_path, method: :delete %>
+      <% end %>
+    </nav>
     <%= yield %>
-    
   </body>
 </html>
