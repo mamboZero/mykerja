@@ -12,10 +12,10 @@
             <th>Actions</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody > 
           <% @tasks.each do |task| %>
           <tr>
-            <td>
+            <td style="<%= "background:red" if task.created_at.to_i + 604800 <= DateTime.now.to_i%>">
               <a href="#">
                 <div class="d-flex align-items-center">
                   <div class="avatar avatar-blue mr-3"> <%= task.two_char %></div>

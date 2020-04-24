@@ -13,7 +13,8 @@
 
   <div class="field">
     <%= form.label :website_name, 'Website' %>
-    <%= form.text_field :website_name %>
+    <%= form.select :website_name, collection: Task::WEBSITE %>
+
   </div>
 
   <div class="field">

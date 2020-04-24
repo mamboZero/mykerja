@@ -21,4 +21,7 @@ class Task < ApplicationRecord
 		"6" + no_fon
 	end
 
+
+	WEBSITE = %w{ HeartyBeauty Haji Spacerent }
+
 end
