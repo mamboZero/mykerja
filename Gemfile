@@ -24,7 +24,9 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'jquery-rails'
 
+gem 'httparty', '~> 0.18.0'
 
+gem 'nokogiri', '~> 1.10', '>= 1.10.9'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -61,4 +63,3 @@ gem 'devise', '~> 4.2'
 gem 'will_paginate', '~> 3.1.0'
 
 gem 'bootstrap', '~> 4.4.1'
-

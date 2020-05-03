@@ -1,14 +1,11 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index, :show]
-
-
-
+  before_action :authenticate_user!
+  
   # GET /tasks
   # GET /tasks.json
   def index
     @tasks = Task.order("created_at DESC").paginate(page: params[:page], per_page: 7)
-    @user = User.first
   end
 
   # GET /tasks/1
@@ -73,6 +70,6 @@ class TasksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def task_params
-      params.require(:task).permit(:website_name, :no_fon, :kaedah)
+      params.require(:task).permit(:website_name, :no_fon, :kaedah, :email_client, :no_tix, :reason)
     end
 end

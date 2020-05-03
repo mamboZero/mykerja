@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users, :path => '', :path_names => { :sign_in => "login", :sign_out => "logout", :sign_up => "register"}
+	  devise_for :users, :path => '', :path_names => { :sign_in => "login", :sign_out => "logout", :sign_up => "register"}
 
-#   namespace :admin do
-# 		resources :tasks
-# end
-
+  root 'public#index'
+  get 'dashboard' => 'dashboard#index' , as: :dashboard
+  get 'dashboard/tasks'
 	resources :tasks
-  root "tasks#index"
+
 end

@@ -12,13 +12,21 @@
   </head>
 
   <body>
-  
+   
+   <% unless user_signed_in? && current_user %>
   <%= render 'shared/nav' %>
+<% else %>
+  <%= render 'shared/dashboard' %>
+<% end %>
 
-    <%= yield %>
+<div class="container-fluid mt-4">
+      <%= yield %>
+
+</div>
 
 
   <%= render 'shared/footer' %>
+
 
   </body>
 </html>
