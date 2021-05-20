@@ -26,7 +26,7 @@ gem 'jquery-rails'
 
 gem 'httparty', '~> 0.18.0'
 
-gem 'nokogiri', '~> 1.10', '>= 1.10.9'
+gem 'nokogiri', '~> 1.11'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
