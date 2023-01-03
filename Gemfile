@@ -24,7 +24,7 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'jquery-rails'
 
-gem 'httparty', '~> 0.18.0'
+gem 'httparty', '~> 0.21.0'
 
 gem 'nokogiri', '~> 1.10', '>= 1.10.9'
 # Use Active Storage variant
